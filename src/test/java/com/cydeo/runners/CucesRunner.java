@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         dryRun = true
         //dryRun turns of the running step_definitions
         //dryRun = true -> do not run my step_definitions but only check  if any step is missing snippet
-        //dryRun = false ->  run my step_definitions but only check  if any step is missing snippet
+        //dryRun = false -> turn off dryRun and our code will run as expected
 )
 
 public class CucesRunner {

@@ -8,17 +8,27 @@ public class Login_StepDefinitions {
     @When("user enters librarian username")
     public void user_enters_librarian_username() {
         System.out.println("User enters librarian username");
-        //entered sout manually after deleting unnecessary 2 lines
+        //entered sout manually after deleting unnecessary line with throw exception
     }
     @When("user enters librarian password")
     public void user_enters_librarian_password() {
         System.out.println("User enters librarian username");
-        //entered sout manually after deleting unnecessary 2 lines
+        //entered sout manually after deleting unnecessary line with throw exception
     }
     @Then("user should see the dashboard")
     public void user_should_see_the_dashboard() {
         System.out.println("User should see the dashboard");
-        //entered sout manually after deleting unnecessary 2 lines
+        //entered sout manually after deleting unnecessary line with throw exception
+        //this will be repeated for below scenario as well as it's the same
+    }
+
+    @When("user enters student username")
+    public void user_enters_student_username() {
+
+    }
+    @When("user enters student password")
+    public void user_enters_student_password() {
+
     }
 
 }
