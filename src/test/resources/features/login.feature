@@ -5,7 +5,7 @@ Feature: Library app Login feature
   accounts. And dashboard should be displayed.
 
   Accounts are: librarian, student, admin
-  @librarian @employee
+  @librarian @employee #you can call 'either by 'librarian' or by 'employee'
   Scenario: Login as librarian
     When user enters librarian username
     And user enters librarian password
@@ -17,11 +17,11 @@ Feature: Library app Login feature
     And user enters student password
     Then user should see the dashboard
 
-  @admin @employee
+  @admin @employee #you can call 'either by 'admin' or by 'employee'
   Scenario: Login as admin
     When user enters admin username
     And user enters admin password
     Then user should see the dashboard
-
+#comments with adding #
 
 

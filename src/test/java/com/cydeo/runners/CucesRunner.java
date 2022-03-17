@@ -6,6 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        plugin = "html:target/cucumber-report.html",
+        //multiple time of reports, 'html' in this case,
+        //'target' is our folder in project, then we name the 'html' report
+        //when you run this class the 'cucumber-report.html'
+        //when I right click on 'cucumber-report.html' file in library and then
+        //choose 'open in' browser->Chrome then this will open login.feature as html page
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
@@ -16,8 +22,10 @@ import org.junit.runner.RunWith;
         //can be @smoke, @librarian, @student or @admin which are in login.feature
         //you can even "@librarian or @student" will execute 2 scenarios
         //'or' here is like || in Java, if any true then execute
+        //also '@Regression and not @student' will execute everything except @student
+        //also '@employee and not @admin' will execute only @librarian
         //@Regression is placed at the top of login.feature to execute whole code
-        //if we place it at the top only one Scenario of login.feature
+        //if we place @something at the top only one Scenario of login.feature
         // then it will execute only this Scenario
 )
 
