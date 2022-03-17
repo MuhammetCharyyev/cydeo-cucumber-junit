@@ -5,11 +5,20 @@ Feature: Library app Login feature
   accounts. And dashboard should be displayed.
 
   Accounts are: librarian, student, admin
-  @librarian @employee #you can call 'either by 'librarian' or by 'employee'
+
+  Background: For the scenarios in this feature file user is expected to be on login page
+  #Background is like precondition or BeforeMethod in TestNG
+    Given user is on the library login page
+   #we got same wording for Given for all users below
+   # and it goes as Background for whole test
+
+  @librarian @employee @wip #you can call 'either by 'librarian' or by 'employee'
+    #wip means "work in progress"
   Scenario: Login as librarian
     When user enters librarian username
     And user enters librarian password
     Then user should see the dashboard
+
 
   @student
   Scenario: Login as student
