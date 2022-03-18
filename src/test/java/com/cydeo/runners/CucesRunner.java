@@ -16,9 +16,10 @@ import org.junit.runner.RunWith;
         glue = "com/cydeo/step_definitions",
         dryRun = false,
         //dryRun turns of the running step_definitions
-        //dryRun = true -> do not run my step_definitions but only check  if any step is missing snippet
+        //dryRun = true -> do not run my step_definitions(do not run browser)
+                           // but only check if any step is missing snippet
         //dryRun = false -> turn off dryRun and our code will run as expected
-        tags =  "@Regression"               //"wip" -> wip means "work in progress"
+        tags =  "wip"               //"wip" -> wip means "work in progress"
                 //"@Regression"//named it by custom, as you want, only make sense where you place it
         //can be @smoke, @librarian, @student or @admin which are in login.feature
         //you can even "@librarian or @student" will execute 2 scenarios
