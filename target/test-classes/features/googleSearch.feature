@@ -5,8 +5,14 @@ Feature: Google search functionality
   Scenario: Search page title verification
     When User in on Google search page
     Then User should see title is Google
-@wip
+
     Scenario: Search functionality result title verification
       Given User is on Google search page
       When User types apple and click enter
       Then User sees apple in the google title
+
+  @wip
+  Scenario: Search functionality result title verification
+    Given User is on Google search page
+    When User types "apple" and click enter
+    Then User sees "apple" in the google title

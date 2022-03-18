@@ -13,6 +13,21 @@ public class GoogleStepDefinitions {
     GoogleSearchPage googleSearchPage = new GoogleSearchPage();
     //object from GoogleSearchPage class to call searchBox method
 
+    @When("User types {string} and click enter")
+    public void user_types_and_click_enter(String searchKeyword) {
+        //give a possibility to enter any string
+        googleSearchPage.searchBox.sendKeys(searchKeyword);
+    }
+    @Then("User sees {string} in the google title")
+    public void user_sees_in_the_google_title(String string) {
+        String expectedTitle = "apple - Google Search";
+        String actualTitle = Driver.getDriver().getTitle();
+        //verify if the title is as expected after finding 'apple'
+        Assert.assertEquals("Title is not as expected", expectedTitle, actualTitle);
+        //a bit another order than in TestNG -> message 1, expected 2, actual 3
+    }
+
+
     @When("User types apple and click enter")
     public void user_types_apple_and_click_enter() {
         googleSearchPage.searchBox.sendKeys("apple"+ Keys.ENTER);
@@ -26,7 +41,7 @@ public class GoogleStepDefinitions {
         String actualTitle = Driver.getDriver().getTitle();
         //verify if the title is as expected after finding 'apple'
         Assert.assertEquals("Title is not as expected", expectedTitle, actualTitle);
-        //a bit another order than in TestNG
+        //a bit another order than in TestNG -> message 1, expected 2, actual 3
     }
 
     @When("User in on Google search page")
@@ -38,9 +53,10 @@ public class GoogleStepDefinitions {
     public void user_should_see_title_is_google() {
         String expectedTitle = "Google";
         String actualTitle = Driver.getDriver().getTitle();
-        Assert.assertEquals(actualTitle, expectedTitle);
+        Assert.assertEquals(expectedTitle, actualTitle);
 
         Driver.closeDriver();
     }
+
 
 }

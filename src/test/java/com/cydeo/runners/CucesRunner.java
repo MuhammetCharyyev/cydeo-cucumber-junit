@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         //choose 'open in' browser->Chrome then this will open login.feature as html page
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
-        dryRun = false,
+        dryRun = true,
         //dryRun turns of the running step_definitions
         //dryRun = true -> do not run my step_definitions(do not run browser)
                            // but only check if any step is missing snippet
