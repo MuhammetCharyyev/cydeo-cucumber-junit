@@ -4,10 +4,15 @@ package com.cydeo.utilities;
 In this class only general utility methods that are not related to some specific page
  */
 
+import io.cucumber.java.an.E;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -33,7 +38,7 @@ public class BrowserUtils {
     Arg3: expectedInTitle to be compared against actualTitle
      */
 
-    public static void switchWindowAndVerify ( String expectedInURL, String expectedTitle){
+    public static void switchWindowAndVerify(String expectedInURL, String expectedTitle) {
 
         Set<String> allWindowsHandles = Driver.getDriver().getWindowHandles();
 
@@ -43,7 +48,7 @@ public class BrowserUtils {
 
             System.out.println("Current URL is : " + Driver.getDriver().getCurrentUrl());
 
-            if (Driver.getDriver().getCurrentUrl().contains(expectedInURL)){
+            if (Driver.getDriver().getCurrentUrl().contains(expectedInURL)) {
                 break;
             }
         }
@@ -57,17 +62,43 @@ public class BrowserUtils {
     /*
  This method accepts a String "expectedTitle" and Asserts if it is true
   */
-    public static void verifyTitle ( String expectedTitle){
+    public static void verifyTitle(String expectedTitle) {
 
         Assert.assertEquals(Driver.getDriver().getTitle(), expectedTitle);
 
     }
 
-    public static void verifyUrlContains (String expectedInUrl){
+    public static void verifyUrlContains(String expectedInUrl) {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInUrl));
         //method to verify if current URL contains expected value
     }
 
+    /**
+     * This method will accept a dropdown as WebElement and return all the options text
+     * in a list of String
+     *
+     * @param dropdownElement
+     * @return
+     */
+
+    public static List<String> dropdownAsString(WebElement dropdownElement) {
+        //creating a method for getting list of webelements and convert it to list of String
+        //accept WebElement in 'Select' section as argument and return List<String>
+
+        Select select = new Select(dropdownElement);
+        //to deal with dropdowns we need 'Select' library
+
+        List<WebElement> actualOptionsAsWebElement = select.getOptions();
+        //return with list of WebElements
+
+        List<String> actualOptionsAsString = new ArrayList<>();
+
+        for (WebElement each : actualOptionsAsWebElement) {//iterate each web element of dropdown
+            actualOptionsAsString.add(each.getText());
+            //adding text of each webelement to the ArrList
+        }
+             return actualOptionsAsString;
+    }
 
 
 }
