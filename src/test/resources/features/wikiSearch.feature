@@ -20,12 +20,15 @@ Feature: Wikipedia search functionality and verifications
     And User clicks wiki search button
     Then User sees "<expectedTitle>" is in the wiki title
     Then User sees "<expectedMainHeader>" is in the main header
-
+    @onePart
     Examples: search values we are going to be using in this scenario is as below
+      | searchValue  | expectedTitle | expectedMainHeader |
+      | Steve Jobs   | Steve Jobs    | Steve Jobs         |
+      | Bob Marley   | Bob Marley    | Bob Marley         |
+      | Chuck Norris | Chuck Norris  | Chuck Norris       |
+    @anotherPart
+    Examples:
       | searchValue     | expectedTitle   | expectedMainHeader |
-      | Steve Jobs      | Steve Jobs      | Steve Jobs         |
-      | Bob Marley      | Bob Marley      | Bob Marley         |
-      | Chuck Norris    | Chuck Norris    | Chuck Norris       |
       | Marie Curie     | Marie Curie     | Marie Curie        |
       | Anthony Hopkins | Anthony Hopkins | Anthony Hopkins    |
 
