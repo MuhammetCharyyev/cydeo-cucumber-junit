@@ -11,7 +11,7 @@ public class WebTableLoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(name = "udername")
+    @FindBy(name = "username")
     public WebElement inputUsername;
     @FindBy(name = "password")
     public WebElement inputPassword;
