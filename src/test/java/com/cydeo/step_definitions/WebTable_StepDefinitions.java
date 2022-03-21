@@ -33,10 +33,19 @@ public class WebTable_StepDefinitions {
         webTableLoginPage.loginBtn.click();
     }
 
+    @When("user enters username {string} password {string} and login")
+    public void user_enters_username_password_and_login(String username, String passw) {
+        webTableLoginPage.inputUsername.sendKeys(username);
+        webTableLoginPage.inputPassword.sendKeys(passw);
+        webTableLoginPage.loginBtn.click();
+    }
+
     @Then("user should see url contains order")
     public void user_should_see_url_contains_order() {
         BrowserUtils.verifyUrlContains("orders");
         //called method from BrowserUtils
     }
+
+
 
 }
