@@ -12,7 +12,7 @@ Feature: Library app Login feature
    #we got same wording for Given for all users below
    # and it goes as Background for whole test
 
-  @librarian @employee @wip #you can call 'either by 'librarian' or by 'employee'
+  @librarian @employee #you can call 'either by 'librarian' or by 'employee'
     #wip means "work in progress"
   Scenario: Login as librarian
     When user enters librarian username
