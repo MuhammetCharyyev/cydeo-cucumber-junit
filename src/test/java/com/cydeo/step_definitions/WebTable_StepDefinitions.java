@@ -35,9 +35,12 @@ public class WebTable_StepDefinitions {
 
     @When("user enters username {string} password {string} and login")
     public void user_enters_username_password_and_login(String username, String passw) {
-        webTableLoginPage.inputUsername.sendKeys(username);
-        webTableLoginPage.inputPassword.sendKeys(passw);
-        webTableLoginPage.loginBtn.click();
+//        webTableLoginPage.inputUsername.sendKeys(username);
+//        webTableLoginPage.inputPassword.sendKeys(passw);
+//        webTableLoginPage.loginBtn.click();
+
+        webTableLoginPage.login(username, passw); //getting unified method from WebTableLoginPage
+
     }
 
     @Then("user should see url contains order")
