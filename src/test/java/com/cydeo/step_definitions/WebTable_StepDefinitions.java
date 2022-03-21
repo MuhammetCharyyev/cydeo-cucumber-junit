@@ -8,6 +8,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.Map;
+
 public class WebTable_StepDefinitions {
 
     WebTableLoginPage webTableLoginPage = new WebTableLoginPage();
@@ -47,6 +49,29 @@ public class WebTable_StepDefinitions {
     public void user_should_see_url_contains_order() {
         BrowserUtils.verifyUrlContains("orders");
         //called method from BrowserUtils
+    }
+
+    @When("User enters below credentials")
+    public void user_enters_below_credentials(Map<String, String> credentials) {
+        //Map will help us to store credentials "key+value" or "username+Test" in this case
+
+//        System.out.println("credentials.get(\"username\") = " + credentials.get("username"));
+//        System.out.println("credentials.get(\"password\") = " + credentials.get("password"));
+
+//        webTableLoginPage.inputUsername.sendKeys(credentials.get("username"));
+//        //saying to webTableLoginPage find key username and return with value string "Test"
+//        webTableLoginPage.inputPassword.sendKeys(credentials.get("password"));
+//        //saying to webTableLoginPage find key password and return with value string "Tester"
+//        webTableLoginPage.loginBtn.click();
+
+
+        webTableLoginPage.login(credentials.get("username"),credentials.get("password"));
+        //fully replaces above stated
+
+
+
+
+
     }
 
 
