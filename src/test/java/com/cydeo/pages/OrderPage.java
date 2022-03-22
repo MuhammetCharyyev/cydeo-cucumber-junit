@@ -32,10 +32,12 @@ public class OrderPage extends BasePage {//this class will inherit methods from 
     public WebElement inputZip;
     @FindBy (name = "card")
     public List<WebElement> cardType;//'List' because it will return with list of webelements
-    @FindBy (name = "zip")
-    public WebElement cardNumber;
-    @FindBy (name = "zip")
-    public WebElement inputZi;
+    @FindBy(name = "cardNo")
+    public WebElement cardNoInput;
+    @FindBy(name = "cardExp")
+    public WebElement cardExpInput;
+    @FindBy(css = "button[type='submit']")
+    public WebElement processOrderBtn;
 
 
 
