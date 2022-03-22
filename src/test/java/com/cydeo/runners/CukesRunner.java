@@ -43,5 +43,5 @@ import org.junit.runner.RunWith;
 
 )
 
-public class CucesRunner {
+public class CukesRunner {
 }
