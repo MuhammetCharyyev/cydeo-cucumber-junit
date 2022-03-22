@@ -100,6 +100,24 @@ public class BrowserUtils {
              return actualOptionsAsString;
     }
 
+    /**
+     * this method will accept group radio btns as a list of WebElement
+     * it will loop through the List and click to the radio btn with provided attributeValue
+     * @param radioBtns
+     * @param attributeValue
+     */
+
+    public static void clickRadioBtn(List<WebElement> radioBtns, String attributeValue){
+        //create a method to click required radio button with 2 args
+
+        for (WebElement each : radioBtns) {//iterate each radio button from the list
+        if(each.getAttribute("value").equalsIgnoreCase(attributeValue));
+        //getAttribute ("value") will find location of value of required field
+//.equals will check if the location matches to expected element as we indicated in 'features'
+        each.click();//click it when found
+    }
+}
+
 
 }
 

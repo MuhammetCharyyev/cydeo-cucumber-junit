@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 public class OrderPage extends BasePage {//this class will inherit methods from BasPage as well
 
     public OrderPage (){
@@ -28,6 +30,14 @@ public class OrderPage extends BasePage {//this class will inherit methods from 
     public WebElement inputState;
     @FindBy (name = "zip")
     public WebElement inputZip;
+    @FindBy (name = "card")
+    public List<WebElement> cardType;//'List' because it will return with list of webelements
+    @FindBy (name = "zip")
+    public WebElement cardNumber;
+    @FindBy (name = "zip")
+    public WebElement inputZi;
+
+
 
 
 
