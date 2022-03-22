@@ -3,6 +3,7 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.BasePage;
 import com.cydeo.pages.OrderPage;
 import com.cydeo.pages.WebTableLoginPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -94,14 +95,18 @@ orderPage.inputZip.sendKeys(string);
 
     @When("user selects credit card type {string}")
     public void user_selects_credit_card_type(String expectedCardType) {
-    List<WebElement> cardTypes = orderPage.cardType;
-    //assign it to 'List' as we need to get list of webelements
-        for (WebElement eachCard : cardTypes) {//iterate each card from the list
-            if(eachCard.getAttribute("value").equalsIgnoreCase(expectedCardType));
-            //getAttribute ("locator") will find location of required field
-//.equals will check if the location matches to expected element as we indicated in 'features'
-            eachCard.click();//click it when found
-        }
+//    List<WebElement> cardTypes = orderPage.cardType;
+//    //assign it to 'List' as we need to get list of webelements
+//        for (WebElement eachCard : cardTypes) {//iterate each card from the list
+//            if(eachCard.getAttribute("value").equalsIgnoreCase(expectedCardType));
+//            //getAttribute ("locator") will find location of required field
+////.equals will check if the location matches to expected element as we indicated in 'features'
+//            eachCard.click();//click it when found
+//        }
+//    }
+        BrowserUtils.clickRadioBtn(orderPage.cardType, expectedCardType);
+        //called method from 'BrowserUtils' instead of above
+
     }
 
     @When("user enters credit card number {string}")
