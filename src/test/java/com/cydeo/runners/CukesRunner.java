@@ -32,8 +32,8 @@ import org.junit.runner.RunWith;
         //dryRun = true -> do not run my step_definitions(do not run browser)
                            // but only check if any step is missing snippet
         //dryRun = false -> turn off dryRun and our code will run as expected
-        tags =  "@smoke" ,              //"wip" -> wip means "work in progress"
-                //"@Regression"//named it by custom, as you want, only make sense where you place it
+        tags =  "@smoke" , //"wip" -> wip means "work in progress"
+        //"@Regression"//named it by custom, as you want, only make sense where you place it
         //can be @smoke, @librarian, @student or @admin which are in login.feature
         //you can even "@librarian or @student" will execute 2 scenarios
         //'or' here is like || in Java, if any true then execute
