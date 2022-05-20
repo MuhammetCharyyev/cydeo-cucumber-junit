@@ -24,6 +24,7 @@
                     <threadCount>4</threadCount>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
+                        <include> **/FailedRunner.java</include>
                         <include>**/CukesRunner*.java</include>
                     </includes>
                 </configuration>

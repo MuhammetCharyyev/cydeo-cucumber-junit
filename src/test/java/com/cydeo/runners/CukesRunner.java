@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 //multiple time of reports, 'html' in this case,
                 //'target' is our folder in project, then we name the 'html' report
                 //when you run this class the 'cucumber-report.html'
-                //when I right click on 'cucumber-report.html' file in library and then
+                //when I 'right click' on 'cucumber-report.html' file in library and then
                 //choose 'open in' browser->Chrome then this will open login.feature as html page
                 "rerun:target/rerun.txt",
                 //'rerun' will build .txt report if something is failed in test with
